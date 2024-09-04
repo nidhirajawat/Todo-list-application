@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-size: 16px;
+      /* background-image: url(./assest/back2.jpg); */
+    }
+
+    .todo-application {
+      border: 1px solid #cccccc;
+      background-image: url(./assest/back2.jpg);
+      max-width: 300px;
+      margin: 20px auto 0 auto;
+      padding: 10px 20px;
+      border-radius: 20px;
+      height: calc(100vh-40px);
+    }
+    h1 {
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .todo-content {
+      /* background-color: #f5f5f5; */
+      background-image: url("./assest/back3.jpg");
+      margin-bottom: 15px;
+      padding: 10px;
+      height: calc(100vh - 134px);
+      overflow: auto;
+    }
+    .todo-form {
+      margin-bottom: 15px;
+      border: 1px solid #eee;
+      padding: 10px;
+      background-color: #caebef;
+    }
+    input[type="text"] {
+      border: none;
+      padding: 5px;
+      font-size: 16px;
+      width: 100%;
+      outline: 1px solid rgba(212, 187, 219, 1);
+    }
+    .input-field {
+      margin-bottom: 15px;
+    }
+    .list-items li {
+      padding: 0;
+      list-style: none;
+      padding: 15px 0 15px 0px;
+      border-bottom: 1px dashed #b22f15;
+    }
+    .list-items {
+      color: black;
+      font-size: 16px;
+    }
+  </style>
+  <body>
+    <div class="todo-application">
+      <div class="todo-list">
+        <h1>ToDO List Application</h1>
+      </div>
+      <div class="todo-content">
+        <form class="todo-form">
+          <input
+            class="input-field"
+            type="text"
+            value=""
+            placeholder="Enter Your Task"
+          />
+          <button>Submit</button>
+        </form>
+        <div class="todo-lis">
+          <ul class="list-items">
+            <li class="list-item">To you have to do is sign ... that’s it!</li>
+          </ul>
+          <ul class="list-items">
+            <li class="list-item">To you have to do is sign ... that’s it!</li>
+          </ul>
+          <ul class="list-items">
+            <li class="list-item">To you have to do is sign ... that’s it!</li>
+          </ul>
+          <ul class="list-items">
+            <li class="list-item">To you have to do is sign ... that’s it!</li>
+          </ul>
+        </div>
+      </div>
+      <div class="todo-footer">&copy; Copyright 2024. All rights reserved.</div>
+    </div>
+  </body>
+</html>
