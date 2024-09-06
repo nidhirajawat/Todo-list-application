@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Protofolio Website..</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    * {
+      /* margin: 0;
+          padding: 0;
+          box-sizing: border-box; */
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      padding-top: 60px;
+    }
+    .container {
+      padding: 0 15px;
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+    .app-header {
+      background: #fff;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+    .app-header .container {
+      height: 60px;
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+    }
+    .sub-menu,
+    .menu-bar {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      background: #fff;
+    }
+    .sub-menu,
+    .menu-bar li a {
+      color: #000000;
+      text-decoration: none;
+      padding: 5px 15px;
+      display: inline-block;
+    }
+    .menu-bar li a {
+      color: red;
+    }
+    .menu-bar li {
+      position: relative;
+    }
+    .sub-menu li a:hover,
+    .menu-bar li a:hover {
+      color: red;
+    }
+    .menu-bar li:hover ul {
+      display: flex;
+      position: absolute;
+      top: 28px;
+      left: 0;
+    }
+    .sub-menu {
+      flex-direction: column;
+      padding: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      display: none;
+    }
+    .logo1 img {
+      max-width: 9%;
+      margin-top: 24px;
+      /* padding: 0px 0px 0px 47px; */
+    }
+    .main-section {
+      position: relative;
+      z-index: -2;
+      padding: 100px 0 20px;
+      background: linear-gradient(
+        0deg,
+        rgba(248, 253, 255, 0) 0%,
+        #ff2a000f 100%
+      );
+      /* float: left; */
+      /* display: flex;
+          justify-content: center;
+          align-items: center; */
+      margin-top: 24px;
+      height: 500px;
+    }
+    .main-section h1 {
+      /* font-size: 60px; */
+      color: #010d4c;
+      flex: 0 0 auto;
+      width: 58.3333333333%;
+      /* visibility: visible;
+          animation-duration: 2s;
+          animation-delay: 0.1s;
+          animation-name: slideInLeft; */
+    }
+    .main-section p {
+      /* font-size: 20px; */
+      color: #556f88;
+      flex: 0 0 auto;
+      width: 58.3333333333%;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    img,
+    svg {
+      vertical-align: middle;
+    }
+    .software {
+      float: left;
+    }
+    .images-section {
+      float: right;
+      position: absolute;
+      right: 5%;
+      top: 25%;
+      width: 36.4%;
+    }
+    .shape-one {
+      top: -5%;
+      right: 37%;
+      width: 24.7%;
+      z-index: 1;
+      animation: rotated 20s infinite linear;
+      position: absolute;
+    }
+    .shape-two {
+      top: 27%;
+      left: 4%;
+      width: 4.6%;
+      z-index: 1;
+      position: absolute;
+    }
+    .shape-three {
+      top: 43%;
+      right: 1%;
+      width: 4.6%;
+      z-index: 1;
+      position: absolute;
+    }
+    .btn {
+      color: white;
+      background-color: red;
+      padding: 12px;
+      font-size: 24px;
+      outline: none;
+      margin-top: 10px;
+    }
+    .down-section h2 {
+      font-weight: bold;
+      max-width: 700px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      line-height: 60px;
+      font-size: 45px;
+      color: #010d4c;
+    }
+    .down-section p {
+      line-height: 30px;
+      font-size: 18px;
+      font-weight: 500;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #556f88;
+    }
+    .happy-client {
+      background: black;
+      padding-top: 20px;
+      margin-top: 30px;
+    }
+    .main-count img {
+      /* padding: 5px; */
+      /* display: inline; */
+      border-radius: 50%;
+      height: 60px;
+      /* width: 80px; */
+      object-fit: cover;
+      background: white;
+    }
+    .main-count h3 {
+      font-size: 30px;
+      line-height: initial;
+      color: white;
+      font-weight: bold;
+    }
+    .counter {
+      color: #fff;
+    }
+    .all-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    /* Technologies */
+    .technologies {
+      background-image: url("./assest/circle.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+    .techno h2 {
+      text-align: center;
+      color: red;
+    }
+    .techno {
+      padding-top: 50px;
+    }
+    .content-imges img {
+      /* margin-top: 60px; */
+      /* display: flex; */
+      width: 150px;
+      /* height: 170px; */
+      object-fit: cover;
+      /* margin-inline: auto; */
+      /* margin-bottom: 15px; */
+      border: 5px solid white;
+      box-shadow: 4px 4px 10px 4px lightgrey;
+      border-radius: 50%;
+    }
+    .content-imges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .content-imges p {
+      align-items: center;
+    }
+    .middle {
+      padding-top: 50px;
+    }
+    .checked {
+      display: flex;
+      align-items: center;
+      /* padding: 1px; */
+    }
+    .checked img {
+      width: 23px;
+    }
+    .checked p {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 15px;
+    }
+    .computer img {
+      /* float: right; */
+      max-width: 450px;
+    }
+    .common-para p {
+      line-height: 28px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #8a8a8a;
+    }
+    .industry {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* FOOTER */
+    .app-footer {
+      background-image: url("./assest/footerwave.png");
+      background-size: cover;
+      background-position: bottom;
+      background-color: #36373c;
+      padding-top: 50px;
+      margin-top: 50px;
+    }
+    .footer-top-part {
+      width: 100%;
+      display: flex;
+      gap: 20px;
+      padding-bottom: 20px;
+    }
+    .footer-col1 {
+      width: 30%;
+    }
+    .footer-top-part h4 {
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: rgb(207, 194, 194);
+    }
+    .footer-bottom-part {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-top: 1px solid #ccc;
+      color: white;
+    }
+    .footer-links a {
+      display: block;
+      text-decoration: none;
+      margin-bottom: 15px;
+      /* color: #333;  */
+      color: white;
+    }
+    .footer-links a:hover {
+      color: red;
+      padding-left: 15px;
+      -webkit-transition: all 500ms ease-in-out;
+      -moz-transition: all 500ms ease-in-out;
+      -ms-transition: all 500ms ease-in-out;
+      -o-transition: all 500ms ease-in-out;
+      transition: all 500ms ease-in-out;
+    }
+  </style>
+
+  <body>
+    <header class="app-header">
+      <div class="container">
+        <h4 class="logo1">
+          <img src="./assest/preciousLogoSquare.png" alt="logo" />
+        </h4>
+        <nav>
+          <ul class="menu-bar">
+            <li><a href="#">Home</a></li>
+            <li>
+              <a href="/about.html">About</a>
+              <ul class="sub-menu">
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Director</a></li>
+                <li><a href="#">Employee</a></li>
+              </ul>
+            </li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <!-- <footer class="sec1">
+        <p>Cpoyright Element all the resction.</p>
+    </footer> -->
+      </div>
+    </header>
+    <main class="main-section">
+      <div class="container">
+        <div class="software">
+          <h1>Developing Software For Your Digital Success</h1>
+          <p>
+            We enable businesses to meet today's needs through robust and
+            adaptable digital solutions while unlocking tomorrow's
+            possibilities.
+          </p>
+          <button class="btn">Contact Us</button>
+        </div>
+        <div class="images-section">
+          <img src="./assest/ils_13.svg" alt="logo1" />
+          <img src="./assest/ils_13_1.svg" alt="logi2" class="shape-one" />
+          <img src="./assest/ils_13_2.svg" alt="logo3" class="shape-two" />
+          <img
+            src="./assest/ils_13_2 (1).svg"
+            alt="logo4"
+            class="shape-three"
+          />
+        </div>
+      </div>
+    </main>
+    <div class="down-section">
+      <h2>Empowering Digital Success through Software Solutions</h2>
+      <p>
+        Empowering digital success through our robust and adaptable software
+        solutions, we enable businesses to meet their current needs while
+        unlocking endless possibilities for tomorrow. With our expertise and
+        forward-thinking approach, we provide businesses with the tools and
+        technologies they need to thrive in the digital realm. Our tailored
+        software solutions are designed to drive growth, enhance efficiency, and
+        deliver exceptional results, ensuring long-term success in today's
+        dynamic business landscape.
+      </p>
+    </div>
+    <!-- New Section -->
+    <section class="happy-client">
+      <div class="container">
+        <div class="all-logo">
+          <div class="main-count">
+            <img src="./assest/project.png" alt="project" />
+            <h3>500 +</h3>
+            <p>projects delivered</p>
+          </div>
+
+          <div class="main-count">
+            <img src="./assest/success.png" alt="project" />
+            <h3>96 +</h3>
+            <p>enterprise client retention</p>
+          </div>
+
+          <div class="main-count">
+            <img src="./assest/year.png" alt="project" />
+            <h3>9 +</h3>
+            <p>years of experience</p>
+          </div>
+
+          <div class="main-count">
+            <img src="./assest/client.png" alt="project" />
+            <h3>96 +</h3>
+            <p class="project">happy clients</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies section -->
+
+    <section class="technologies">
+      <div class="container">
+        <div class="techno">
+          <h2>Technologies We Work With</h2>
+        </div>
+        <div class="content-imges">
+          <img src="./assest/python.png" alt="python" />
+          <p>Python</p>
+          <img src="./assest/react.png" alt="react" />
+          <p>React</p>
+          <img src="./assest/ror.png" alt="ror" />
+          <p>ROR</p>
+          <img src="./assest/django.png" alt="django" />
+          <p>django</p>
+          <img src="./assest/js.png" alt="js" />
+          <p>JavaScript</p>
+        </div>
+        <div class="middle">
+          <div class="content-imges">
+            <img src="./assest/python.png" alt="python" />
+            <p>Python</p>
+            <img src="./assest/react.png" alt="react" />
+            <p>React</p>
+            <img src="./assest/ror.png" alt="ror" />
+            <p>ROR</p>
+            <img src="./assest/django.png" alt="django" />
+            <p>django</p>
+            <img src="./assest/js.png" alt="js" />
+            <p>JavaScript</p>
+          </div>
+        </div>
+        <div class="techno">
+          <h2>Industries We Serve</h2>
+        </div>
+        <div class="industry">
+          <div class="common-para">
+            <p>
+              Our industry specific software solutions streamlined business
+              process along with efficient customer’s engagement. We identify
+              opportunities to provide competitive advantages to our clients by
+              leveraging the latest technology. Boost your revenue and drive
+              operational excellence with our customized software industries
+              solutions.
+            </p>
+            <div class="checked">
+              <img src="./assest/checked.png" alt="checked" />
+              <p>Increased company value</p>
+            </div>
+            <div class="checked">
+              <img src="./assest/checked.png" alt="checked" />
+              <p>Reduces training overheads</p>
+            </div>
+            <div class="checked">
+              <img src="./assest/checked.png" alt="checked" />
+              <p>Increases employees efficiency and productivity</p>
+            </div>
+            <div class="checked">
+              <img src="./assest/checked.png" alt="checked" />
+              <p>Accelerate growth</p>
+            </div>
+            <div class="checked">
+              <img src="./assest/checked.png" alt="checked" />
+              <p>Increased company value</p>
+            </div>
+            <div class="checked">
+              <img src="./assest/checked.png" alt="checked" />
+              <p>Streamline business operations and accounts</p>
+            </div>
+            <div class="checked">
+              <img src="./assest/checked.png" alt="checked" />
+              <p>
+                Effective communication with customers, suppliers and partners
+              </p>
+            </div>
+            <div class="checked">
+              <img src="./assest/checked.png" alt="checked" />
+              <p>Reduction in cost</p>
+            </div>
+          </div>
+          <div class="computer">
+            <img src="./assest/industry (1).png" alt="industry" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
+      <div class="container">
+        <div class="footer-top-part">
+          <div class="footer-col footer-col1">
+            <h4>Precious Infosystem Pvt. Ltd.</h4>
+            <p style="color: white">
+              Our Commitment: Making Technology Work for You!
+            </p>
+          </div>
+
+          <!-- col-2 -->
+          <div class="footer-col footer-col1">
+            <h4>Quick Links</h4>
+            <div class="footer-links">
+              <a href="#">Industries we serve</a>
+              <a href="#">Press Release</a>
+              <a href="#">Portfolio</a>
+            </div>
+          </div>
+
+          <!-- column-3 -->
+          <div class="footer-col footer-col1">
+            <h4>Services</h4>
+            <div class="footer-links">
+              <a href="#">Website Development</a>
+              <a href="#">Mobile App Development</a>
+              <a href="#">Software Development</a>
+              <a href="#">Full Stack Development</a>
+              <a href="#">UI/UX Design</a>
+              <a href="#">Digital Marketing</a>
+            </div>
+          </div>
+
+          <!-- column-4 -->
+          <div class="footer-col footer-col1">
+            <h4>Contact Us</h4>
+            <p style="color: white">
+              01, MR 9, Scheme No 51, Sector B, Chandra Nagar, Indore, Madhya
+              Pradesh, India ( 452010 )
+            </p>
+            <h6 style="color: white">contact@preciousinfosystem.com</h6>
+            <h5 style="color: white">P: +91- 7880087103</h5>
+          </div>
+        </div>
+
+        <div class="footer-botton-part">
+          <div class="footer-b-col1" style="color: white">
+            &copy; Copyright 2024. All rights resvered.
+          </div>
+          <div class="footer-b-col2" style="color: #fff">
+            Created By: <a href="#">Nidhi Rajawat</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
