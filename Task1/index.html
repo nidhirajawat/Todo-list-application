@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header-footer Create</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      padding-top: 60px;
+      /* background-color: #ccc; */
+    }
+    .container {
+      padding: 0 15px;
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+    .app-header {
+      background: #fff;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+    .app-header .container {
+      height: 60px;
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+    }
+    .sub-menu,
+    .menu-bar {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      background: #fff;
+    }
+    .sub-menu,
+    .menu-bar li a {
+      color: #000000;
+      text-decoration: none;
+      padding: 5px 15px;
+      display: inline-block;
+    }
+    .menu-bar li a {
+      color: red;
+    }
+    .menu-bar li {
+      position: relative;
+    }
+    .sub-menu li a:hover,
+    .menu-bar li a:hover {
+      color: red;
+    }
+    .menu-bar li:hover ul {
+      display: flex;
+      position: absolute;
+      top: 28px;
+      left: 0;
+    }
+    .sub-menu {
+      flex-direction: column;
+      padding: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      display: none;
+    }
+    .logo1 img {
+      max-width: 9%;
+      margin-top: 24px;
+      /* padding: 0px 0px 0px 47px; */
+    }
+    /* Main-Section */
+    .main-section {
+      position: relative;
+      z-index: -2;
+      padding: 100px 0 20px;
+      background: linear-gradient(
+        0deg,
+        rgba(248, 253, 255, 0) 0%,
+        #ff2a000f 100%
+      );
+      margin-top: 24px;
+      height: 500px;
+    }
+    .main-section h1 {
+      color: #010d4c;
+      flex: 0 0 auto;
+      width: 58.3333333333%;
+    }
+    .main-section p {
+      color: #556f88;
+      flex: 0 0 auto;
+      width: 58.3333333333%;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    img,
+    svg {
+      vertical-align: middle;
+    }
+    .software {
+      float: left;
+    }
+    .images-section {
+      float: right;
+      position: absolute;
+      right: 5%;
+      top: 25%;
+      width: 36.4%;
+    }
+    .shape-one {
+      top: -5%;
+      right: 37%;
+      width: 24.7%;
+      z-index: 1;
+      animation: rotated 20s infinite linear;
+      position: absolute;
+    }
+    .shape-two {
+      top: 27%;
+      left: 4%;
+      width: 4.6%;
+      z-index: 1;
+      position: absolute;
+    }
+    .shape-three {
+      top: 43%;
+      right: 1%;
+      width: 4.6%;
+      z-index: 1;
+      position: absolute;
+    }
+    .btn {
+      color: white;
+      background-color: red;
+      padding: 12px;
+      font-size: 24px;
+      outline: none;
+      margin-top: 10px;
+    }
+    .down-section h2 {
+      font-weight: bold;
+      max-width: 700px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      line-height: 60px;
+      font-size: 45px;
+      color: #010d4c;
+    }
+    .down-section p {
+      line-height: 30px;
+      font-size: 18px;
+      font-weight: 500;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #556f88;
+    }
+    /* Card-Section */
+
+    .testimonial-section {
+      text-align: center;
+      padding: 20px;
+      background: #f9e8eb;
+    }
+
+    .testimonial-section h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    .testimonial-section .subtitle {
+      font-size: 27px;
+      color: red;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .testimonial-card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .testimonial-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+
+    .testimonial-card p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-card .author {
+      font-weight: bold;
+      font-size: 18px;
+      color: #2c3e50;
+    }
+
+    .testimonial-card .position {
+      font-size: 14px;
+      color: #888;
+    }
+    /* Form-Section */
+    .form-action {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 40px;
+    }
+    .form-container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+    }
+
+    .form-container h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #007bff;
+    }
+
+    .form-group textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #ff3d00;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #e53900;
+    }
+
+    /* FOOTER */
+    .app-footer {
+      background-image: url("./assest/footerwave.png");
+      background-size: cover;
+      background-position: bottom;
+      background-color: #36373c;
+      padding-top: 50px;
+      margin-top: 50px;
+    }
+    .footer-top-part {
+      width: 100%;
+      display: flex;
+      gap: 20px;
+      padding-bottom: 20px;
+    }
+    .footer-col1 {
+      width: 30%;
+    }
+    .footer-top-part h4 {
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: rgb(207, 194, 194);
+    }
+    .footer-bottom-part {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-top: 1px solid #ccc;
+      color: white;
+    }
+    .footer-links a {
+      display: block;
+      text-decoration: none;
+      margin-bottom: 15px;
+      /* color: #333;  */
+      color: white;
+    }
+    .footer-links a:hover {
+      color: red;
+      padding-left: 15px;
+      -webkit-transition: all 500ms ease-in-out;
+      -moz-transition: all 500ms ease-in-out;
+      -ms-transition: all 500ms ease-in-out;
+      -o-transition: all 500ms ease-in-out;
+      transition: all 500ms ease-in-out;
+    }
+  </style>
+  <body>
+    <header class="app-header">
+      <div class="container">
+        <h4 class="logo1">
+          <img src="./assest/preciousLogoSquare.png" alt="logo" />
+        </h4>
+        <nav>
+          <ul class="menu-bar">
+            <li><a href="#">Home</a></li>
+            <li>
+              <a href="/about.html">About</a>
+              <ul class="sub-menu">
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Director</a></li>
+                <li><a href="#">Employee</a></li>
+              </ul>
+            </li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Main-Section -->
+    <main class="main-section">
+      <div class="container">
+        <div class="software">
+          <h1>Developing Software For Your Digital Success</h1>
+          <p>
+            We enable businesses to meet today's needs through robust and
+            adaptable digital solutions while unlocking tomorrow's
+            possibilities.
+          </p>
+          <button class="btn">Contact Us</button>
+        </div>
+        <div class="images-section">
+          <img src="./assest/ils_13.svg" alt="logo1" />
+          <img src="./assest/ils_13_1.svg" alt="logi2" class="shape-one" />
+          <img src="./assest/ils_13_2.svg" alt="logo3" class="shape-two" />
+          <img
+            src="./assest/ils_13_2 (1).svg"
+            alt="logo4"
+            class="shape-three"
+          />
+        </div>
+      </div>
+    </main>
+    <div class="down-section">
+      <h2>Empowering Digital Success through Software Solutions</h2>
+      <p>
+        Empowering digital success through our robust and adaptable software
+        solutions, we enable businesses to meet their current needs while
+        unlocking endless possibilities for tomorrow. With our expertise and
+        forward-thinking approach, we provide businesses with the tools and
+        technologies they need to thrive in the digital realm. Our tailored
+        software solutions are designed to drive growth, enhance efficiency, and
+        deliver exceptional results, ensuring long-term success in today's
+        dynamic business landscape.
+      </p>
+    </div>
+
+    <!-- Form-Section -->
+    <section class="form-action">
+      <div class="form-container">
+        <form action="./index.html">
+          <div class="form-group">
+            <label for="name">Name*</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Your Full Name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" placeholder="Your Company Name" />
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" id="country" placeholder="Your Country Name" />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone*</label>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Your Mobile Number"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email*</label>
+            <input type="email" id="email" placeholder="Your Email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Give Us A Message*</label>
+            <textarea
+              id="message"
+              placeholder="Your Message"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Card-Section -->
+
+    <section class="testimonial-section">
+      <div class="container">
+        <div class="subtitle">Testimonials</div>
+        <h2>Words from Client</h2>
+        <div class="testimonial-card">
+          <img src="./assest/john.jpeg" alt="Client Image" />
+          <p>
+            Working with Precious Infosystem has been a game-changer for our
+            business. Their..
+          </p>
+          <div class="author">John Smith</div>
+          <div class="position">CEO of Aahan Technologies</div>
+        </div>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="app-footer">
+      <div class="container">
+        <div class="footer-top-part">
+          <div class="footer-col footer-col1">
+            <h4>Precious Infosystem Pvt. Ltd.</h4>
+            <p style="color: white">
+              Our Commitment: Making Technology Work for You!
+            </p>
+          </div>
+
+          <!-- col-2 -->
+          <div class="footer-col footer-col1">
+            <h4>Quick Links</h4>
+            <div class="footer-links">
+              <a href="#">Industries we serve</a>
+              <a href="#">Press Release</a>
+              <a href="#">Portfolio</a>
+            </div>
+          </div>
+
+          <!-- column-3 -->
+          <div class="footer-col footer-col1">
+            <h4>Services</h4>
+            <div class="footer-links">
+              <a href="#">Website Development</a>
+              <a href="#">Mobile App Development</a>
+              <a href="#">Software Development</a>
+              <a href="#">Full Stack Development</a>
+              <a href="#">UI/UX Design</a>
+              <a href="#">Digital Marketing</a>
+            </div>
+          </div>
+
+          <!-- column-4 -->
+          <div class="footer-col footer-col1">
+            <h4>Contact Us</h4>
+            <p style="color: white">
+              01, MR 9, Scheme No 51, Sector B, Chandra Nagar, Indore, Madhya
+              Pradesh, India ( 452010 )
+            </p>
+            <h6 style="color: white">contact@preciousinfosystem.com</h6>
+            <h5 style="color: white">P: +91- 7880087103</h5>
+          </div>
+        </div>
+
+        <div class="footer-botton-part">
+          <div class="footer-b-col1" style="color: white">
+            &copy; Copyright 2024. All rights resvered.
+          </div>
+          <div class="footer-b-col2" style="color: #fff">
+            Created By: <a href="#">Nidhi Rajawat</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
